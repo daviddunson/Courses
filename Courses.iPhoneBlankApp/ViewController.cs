@@ -7,10 +7,13 @@
 namespace Courses.iPhoneBlankApp
 {
     using System;
+    using Courses.Library;
     using UIKit;
 
     public partial class ViewController : UIViewController
     {
+        private CourseManager courseManager;
+
         public ViewController() : base("ViewController", null)
         {
         }
@@ -29,20 +32,31 @@ namespace Courses.iPhoneBlankApp
             // Perform any additional setup after loading the view, typically from a nib.
             this.previousButton.TouchUpInside += this.PreviousButton_TouchUpInside;
             this.nextButton.TouchUpInside += this.NextButton_TouchUpInside;
+            this.courseManager = new CourseManager();
+            this.courseManager.MoveFirst();
+
+            this.Refresh();
         }
 
         private void NextButton_TouchUpInside(object sender, EventArgs e)
         {
-            this.titleLabel.Text = "Next Clicked";
-            this.descriptionLabel.Text = "The next button was clicked.";
-            this.imageView.Image = UIImage.FromBundle("img33278.jpg");
+            this.courseManager.MoveNext();
+            this.Refresh();
         }
 
         private void PreviousButton_TouchUpInside(object sender, EventArgs e)
         {
-            this.titleLabel.Text = "Previous Clicked";
-            this.descriptionLabel.Text = "The previous button was clicked.";
-            this.imageView.Image = UIImage.FromBundle("img33279.jpg");
+            this.courseManager.MovePrevious();
+            this.Refresh();
+        }
+
+        private void Refresh()
+        {
+            this.titleLabel.Text = this.courseManager.Current.Title;
+            this.descriptionLabel.Text = this.courseManager.Current.Description;
+            this.previousButton.Enabled = this.courseManager.HasPrevious;
+            this.nextButton.Enabled = this.courseManager.HasNext;
+            this.imageView.Image = UIImage.FromBundle("img33278.jpg");
         }
     }
 }

@@ -10,12 +10,14 @@ namespace Courses.AndroidBlankApp
     using Android.App;
     using Android.OS;
     using Android.Widget;
+    using Courses.Library;
 
     [Activity(Label = "Courses", MainLauncher = true)]
     public class MainActivity : Activity
     {
         private Button buttonNext;
         private Button buttonPrevious;
+        private CourseManager courseManager;
         private ImageView imageView;
         private TextView textDescription;
         private TextView textTitle;
@@ -33,20 +35,31 @@ namespace Courses.AndroidBlankApp
             this.textTitle = this.FindViewById<TextView>(Resource.Id.textTitle);
             this.textDescription = this.FindViewById<TextView>(Resource.Id.textDescription);
             this.imageView = this.FindViewById<ImageView>(Resource.Id.imageView);
+            this.courseManager = new CourseManager();
+            this.courseManager.MoveFirst();
+
+            this.Refresh();
         }
 
         private void ButtonNext_Click(object sender, EventArgs e)
         {
-            this.textTitle.Text = "Next Clicked";
-            this.textDescription.Text = "The next button was clicked.";
-            this.imageView.SetImageResource(Resource.Drawable.img33279);
+            this.courseManager.MoveNext();
+            this.Refresh();
         }
 
         private void ButtonPrevious_Click(object sender, EventArgs e)
         {
-            this.textTitle.Text = "Previous Clicked";
-            this.textDescription.Text = "The previous button was clicked.";
-            this.imageView.SetImageResource(Resource.Drawable.img33280);
+            this.courseManager.MovePrevious();
+            this.Refresh();
+        }
+
+        private void Refresh()
+        {
+            this.textTitle.Text = this.courseManager.Current.Title;
+            this.textDescription.Text = this.courseManager.Current.Description;
+            this.buttonPrevious.Enabled = this.courseManager.HasPrevious;
+            this.buttonNext.Enabled = this.courseManager.HasNext;
+            this.imageView.SetImageResource(Resource.Drawable.img33279);
         }
     }
 }
