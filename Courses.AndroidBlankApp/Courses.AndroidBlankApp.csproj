@@ -54,6 +54,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DrawableExtensions.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,13 +79,13 @@
     <Folder Include="Resources\mipmap-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\img33278.jpg" />
+    <AndroidResource Include="Resources\drawable\ps_top_card_01.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\img33279.jpg" />
+    <AndroidResource Include="Resources\drawable\ps_top_card_02.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\img33280.jpg" />
+    <AndroidResource Include="Resources\drawable\ps_top_card_03.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Courses.Library\Courses.Library.csproj">

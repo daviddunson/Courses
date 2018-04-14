@@ -79,9 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entitlements.plist" />
-    <BundleResource Include="Resources\img33278.jpg" />
-    <BundleResource Include="Resources\img33279.jpg" />
-    <BundleResource Include="Resources\img33280.jpg" />
+    <BundleResource Include="Resources\ps_top_card_01.jpg" />
+    <BundleResource Include="Resources\ps_top_card_03.jpg" />
+    <BundleResource Include="Resources\ps_top_card_02.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Courses.Library\Courses.Library.csproj">

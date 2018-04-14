@@ -46,8 +46,8 @@
         </view>
     </objects>
     <resources>
-        <image name="img33278.jpg" width="1800" height="1350"/>
-        <image name="img33279.jpg" width="1800" height="1350"/>
-        <image name="img33280.jpg" width="1800" height="1350"/>
+        <image name="ps_top_card_01.jpg" width="1800" height="1350"/>
+        <image name="ps_top_card_02.jpg" width="1800" height="1350"/>
+        <image name="ps_top_card_03.jpg" width="1800" height="1350"/>
     </resources>
 </document>

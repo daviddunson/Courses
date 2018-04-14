@@ -54,9 +54,9 @@ namespace Courses.iPhoneBlankApp
         {
             this.titleLabel.Text = this.courseManager.Current.Title;
             this.descriptionLabel.Text = this.courseManager.Current.Description;
+            this.imageView.Image = UIImage.FromBundle(string.Concat(this.courseManager.Current.Image, ".jpg"));
             this.previousButton.Enabled = this.courseManager.HasPrevious;
             this.nextButton.Enabled = this.courseManager.HasNext;
-            this.imageView.Image = UIImage.FromBundle("img33278.jpg");
         }
     }
 }

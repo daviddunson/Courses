@@ -57,9 +57,9 @@ namespace Courses.AndroidBlankApp
         {
             this.textTitle.Text = this.courseManager.Current.Title;
             this.textDescription.Text = this.courseManager.Current.Description;
+            this.imageView.SetImageResource(Resource.Drawable.FromString(this.courseManager.Current.Image));
             this.buttonPrevious.Enabled = this.courseManager.HasPrevious;
             this.buttonNext.Enabled = this.courseManager.HasNext;
-            this.imageView.SetImageResource(Resource.Drawable.img33279);
         }
     }
 }
