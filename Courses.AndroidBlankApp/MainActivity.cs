@@ -12,7 +12,7 @@ namespace Courses.AndroidBlankApp
     using Android.Widget;
     using Courses.Library;
 
-    [Activity(Label = "Courses", MainLauncher = true)]
+    //[Activity(Label = "Courses", MainLauncher = true)]
     public class MainActivity : Activity
     {
         private Button buttonNext;

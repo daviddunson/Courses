@@ -6,6 +6,7 @@
 
 namespace Courses.Library
 {
+    using System;
     using System.Collections.Generic;
 
     public class CourseManager
@@ -38,6 +39,8 @@ namespace Courses.Library
             };
         }
 
+        public int Count => this.courses.Count;
+
         public Course Current => this.courses[this.courseIndex];
 
         public bool HasNext => this.courseIndex < this.courses.Count - 1;
@@ -63,6 +66,16 @@ namespace Courses.Library
             {
                 this.courseIndex--;
             }
+        }
+
+        public void MoveTo(int position)
+        {
+            if (position < 0 || position >= this.courses.Count)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            this.courseIndex = position;
         }
     }
 }
